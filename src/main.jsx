@@ -5,26 +5,31 @@ import AddProduct from './Components/AddProduct.jsx'
 import NotFound from './Components/NotFound.jsx'
 import Mycart from './Components/Mycart.jsx';
 import Home from './Components/Home.jsx';
-import { createBrowserRouter , RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Shop from './Components/Shop.jsx';
 
 const router = createBrowserRouter([
   {
 
-    path : '/',
-    element : <App/>,
-    errorElement : <NotFound/>,
-    children : [
+    path: '/',
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [
       {
-        path : '/',
-        element : <Home/>
+        path: '/',
+        element: <Home />
       },
       {
-        path : '/AddProducts',
-        element : <AddProduct/>
+        path: '/Shop',
+        element: <Shop />
       },
       {
-        path : '/Mycart',
-        element : <Mycart/>
+        path: '/Addproducts',
+        element: <AddProduct />
+      },
+      {
+        path: '/Mycart',
+        element: <Mycart />
       }
     ]
 
@@ -36,6 +41,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

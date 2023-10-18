@@ -7,6 +7,8 @@ import Mycart from './Components/Mycart.jsx';
 import Home from './Components/Home.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Shop from './Components/Shop.jsx';
+import Contact from './Components/Contact.jsx';
+import About from './Components/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/Mycart',
         element: <Mycart />
+      },
+      {
+        path: '/Contact',
+        element: <Contact/>
+      },
+      {
+        path: '/About',
+        element: <About/>
       }
     ]
 

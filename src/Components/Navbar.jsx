@@ -36,8 +36,19 @@ function Navbar() {
             <div className='w-full bg-[#2742fd] px-[5%] flex items-center justify-between '>
 
                 <div className='flex items-center gap-2 text-[#ffffff] py-6 '>
-                    <i className="fa-solid fa-square-caret-down"></i>
-                    <h1 className='font-normal text-base cursor-pointer '>All categories</h1>
+                    
+
+                    <select name="categories" className='bg-inherit border-none outline-none cursor-pointer'>
+                        <option  className='text-[#2742fd] cursor-pointer' value="">All categories</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="sony">Sony</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="Apple">Apple</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="Samsung">Samsung</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="Google">Google</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="Intel">Intel</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="LG">LG</option>
+                        <option className='text-[#2742fd] cursor-pointer' value="Kelvin">Kelvin</option>
+                    </select>
+
                 </div>
 
                 <div className='flex border-[1px] h-[45px] w-[29rem] rounded-md'>
@@ -46,11 +57,11 @@ function Navbar() {
                 </div>
 
                 <div className='flex items-center gap-2  text-[#ffffff] cursor-pointer'>
-                <i className="fa-solid fa-cart-shopping text-2xl"></i>
-                <h1 className='text-base font-medium'>Cart</h1>
+                    <i className="fa-solid fa-cart-shopping text-2xl"></i>
+                    <h1 className='text-base font-medium'>Cart</h1>
 
-                    
-                    
+
+
 
                 </div>
 

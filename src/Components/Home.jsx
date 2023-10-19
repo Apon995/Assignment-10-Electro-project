@@ -4,11 +4,11 @@ import banner from '../assets/banner.webp'
 function Home() {
   return (
     <>
-      <section className='min-h-screen w-full px-[5%]'>
+      <section className='min-h-screen w-full '>
         <br />
         <br />
         {/* --banner- */}
-        <div className='flex items-center'>
+        <div className='flex items-center px-[5%]'>
           <div className='w-[45%] space-y-5'>
             <div className='text-[#252525]'>
               <h1 className='uppercase text-red-600 text-xl tracking-[4px]'>Tech Products</h1>
@@ -22,9 +22,67 @@ function Home() {
 
           </div>
           <div className='w-[55%]'>
-            <img src={banner} alt="" className='mx-auto ' />
+            <img src={banner} alt="" className='mx-auto w-[85%] ' />
 
           </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        {/* --policy-section-- */}
+        <div className='w-full h-[120px] border-t-[1px] border-[#ededed] border-b-[1px] flex items-center justify-around z-10 shadow-md'>
+
+          {/* --row-1-- */}
+          <div className='flex items-center gap-3 hover:cursor-pointer'>
+            <i className="fa-solid fa-truck text-[2rem] text-[#2742fd]"></i>
+
+            <div>
+              <h1 className='text-[#252525] text-xl font-medium'> Free devlivery</h1>
+              <p className='text-sm text-[#636363] font-normal'>   Free devlivery on all US order</p>
+
+            </div>
+
+
+          </div>
+
+          {/* --row-2-- */}
+          <div className='flex items-center gap-3 hover:cursor-pointer'>
+            <i className="fa-solid fa-headphones text-[2rem] text-[#2742fd]"></i>
+            <div>
+              <h1 className='text-[#252525] text-xl font-medium'>Support 24/7</h1>
+              <p className='text-sm text-[#636363] font-normal'>Contact us 24 hours a day</p>
+            </div>
+
+          </div>
+
+          {/* ---row-3-- */}
+          <div className='flex items-center gap-3 hover:cursor-pointer'>
+            <i className="fa-solid fa-money-check-dollar text-[2rem] text-[#2742fd]"></i>
+
+            <div>
+              <h1 className='text-[#252525] text-xl font-medium'>100% Money Back</h1>
+              <p  className='text-sm text-[#636363] font-normal'> You have 30 days to Return</p>
+            </div>
+
+          </div>
+
+
+
+          {/* --row-4-- */}
+          <div className='flex items-center gap-3 hover:cursor-pointer'>
+            <i class="fa-solid fa-rotate-left text-[2rem] text-[#2742fd]"></i>
+
+            <div>
+              <h1 className='text-[#252525] text-xl font-medium'>30 Days Return</h1>
+              <p className='text-sm text-[#636363] font-normal'>If Products have major problem</p>
+
+            </div>
+
+          </div>
+         
+
+
+
         </div>
 
       </section>

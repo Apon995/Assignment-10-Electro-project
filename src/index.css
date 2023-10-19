@@ -53,3 +53,11 @@ body {
   color:#2742fd;
   transition: all 0.4s;
 }
+
+.shopActive {
+
+  background-color: #2742fd;
+  color: #ffffff;
+  
+
+}

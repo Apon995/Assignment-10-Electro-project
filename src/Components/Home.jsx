@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import banner from '../assets/banner.webp'
-import Watch from '../assets/Watch.webp'
+import TopSellCard from '../Cards/TopSellCard';
+import Watch from '../assets/watch.webp'
+
+
 
 function Home() {
+  const [Product, setProduct] = useState([]);
+
+
+  useEffect(() => {
+
+    fetch('http://localhost:5000/Products')
+      .then(res => res.json())
+      .then(data => setProduct(data))
+
+  }, [])
+
+
+
+
+
+
   return (
     <>
       <section className='min-h-screen w-full '>
@@ -71,7 +90,7 @@ function Home() {
 
           {/* --row-4-- */}
           <div className='flex items-center gap-3 hover:cursor-pointer'>
-            <i class="fa-solid fa-rotate-left text-[2rem] text-[#2742fd]"></i>
+            <i className="fa-solid fa-rotate-left text-[2rem] text-[#2742fd]"></i>
 
             <div>
               <h1 className='text-[#252525] text-xl font-medium'>30 Days Return</h1>
@@ -105,49 +124,9 @@ function Home() {
 
           </div>
           <div className='flex items-center gap-2'>
-            {/* --card-- */}
-            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
-
-
-            {/* --card-- */}
-            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
-
-
-            {/* --card-- */}
-            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
-
-
-            {/* --card-- */}
-            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
-
-
-            {/* --card-- */}
-            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
+            {
+              Product?.slice(1, 6).map((data) => <TopSellCard key={data._id} data={data} />)
+            }
 
           </div>
 
@@ -155,6 +134,23 @@ function Home() {
 
         <br />
         <br />
+
+        <div>
+
+          <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[700px] hover:cursor-pointer'>
+            <div className='bg-[#fafafa] rounded-md  flex flex-row-reverse items-center py-5'>
+              <img src={Watch} alt="watch" className='w-[140px] mx-auto' />
+              <div>
+                <h1>Protective Sleeves </h1>
+                  <p>It is a long established fact <br />
+                  that a reader will be distracted</p>
+
+                  <button className='bg-[#2742fd] px-4 py-3 rounded-md text-white hover:text-[#252525] duration-500  hover:border-[1px] hover:bg-inherit hover:text-normal  font-medium'>Shop now</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
       </section>
 

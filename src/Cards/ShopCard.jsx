@@ -1,62 +1,35 @@
 import React from 'react'
 import Watch from '../assets/Watch.webp'
 
-function ShopCard() {
+function ShopCard({ product }) {
+
+    const { product_Image, brand_Name, product_type, price } = product || {};
 
 
-    const handleRatingOne = () => {
 
-        document.getElementById('ratingOne').classList.toggle('text-[#ffe234]')
-
-    }
-    const handleRatingTwo = () => {
-
-        document.getElementById('ratingTwo').classList.toggle('text-[#ffe234]')
-
-    }
-    const handleRatingThree = () => {
-
-        document.getElementById('ratingThree').classList.toggle('text-[#ffe234]')
-
-    }
-    const handleRatingFour = () => {
-
-        document.getElementById('ratingFour').classList.toggle('text-[#ffe234]')
-
-    }
-    const handleRatingFive = () => {
-
-        document.getElementById('ratingFive').classList.toggle('text-[#ffe234]')
-
-    }
-    const handleRatingSix = () => {
-
-        document.getElementById('ratingSix').classList.toggle('text-[#ffe234]')
-
-    }
     return (
         <>
 
-            <div className='border-[1px] border-[#ededed] rounded-md w-[250px] py-2 px-2 hover:cursor-pointer'>
+            <div className='border-[1px] border-[#ededed] rounded-md  py-2 px-2 hover:cursor-pointer'>
 
                 <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                    <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                    <img src={product_Image} alt="watch" className='w-[170px] h-[160px] mx-auto' />
                 </div>
 
                 <div className='px-1 space-y-1 text-[#252525]'>
-                    <h1 className='text-xl text-[#252525] font-semibold'>Watch</h1>
+                    <h1 className='text-xl text-[#252525] font-semibold'>{product_type || 'watch'}</h1>
                     <div >
-                        <i onClick={handleRatingOne} id='ratingOne' className="fa-solid fa-star text-[#ffe234] "></i>
-                        <i onClick={handleRatingTwo} id='ratingTwo' className="fa-solid fa-star text-[#ffe234] "></i>
-                        <i onClick={handleRatingThree} id='ratingThree' className="fa-solid fa-star text-[#ffe234] "></i>
-                        <i onClick={handleRatingFour} id='ratingFour' className="fa-solid fa-star " ></i>
-                        <i onClick={handleRatingFive} className="fa-solid fa-star  " id='ratingFive'></i>
-                        <i onClick={handleRatingSix} className="fa-solid fa-star  " id='ratingSix'></i>
+                        <i className="fa-solid fa-star text-[#ffe234] "></i>
+                        <i className="fa-solid fa-star text-[#ffe234] "></i>
+                        <i className="fa-solid fa-star text-[#ffe234] "></i>
+                        <i className="fa-solid fa-star " ></i>
+                        <i className="fa-solid fa-star  " ></i>
+                        <i className="fa-solid fa-star  " ></i>
 
                     </div>
 
-                    <p className='text-[#252525] text-base font-normal'>Brand : Apple</p>
-                    <p className='text-[#252525] text-base font-normal'>Price : $4445</p>
+                    <p className='text-[#252525] text-base font-normal'>Brand : {brand_Name ||'apple'}</p>
+                    <p className='text-[#252525] text-base font-normal'>Price : ${price || '000'}</p>
 
 
 

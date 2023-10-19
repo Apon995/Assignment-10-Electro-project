@@ -12,7 +12,7 @@ function Navbar() {
                     <h1 className='text-2xl font-medium text-black'>electro</h1>
                 </div>
                 <div>
-                    <ul className='flex items-center gap-3 ' id='navUl'>
+                    <ul className='flex items-center gap-3  ' id='navUl'>
                         <li><NavLink to='/'>Home</NavLink></li>
                         <li><NavLink to='/Shop'>Shop</NavLink></li>
                         <li><NavLink to='/About'>About us</NavLink></li>
@@ -41,7 +41,7 @@ function Navbar() {
                 </div>
 
                 <div className='flex border-[1px] h-[45px] w-[29rem] rounded-md'>
-                    <input type="text" name="search" id="search" placeholder='search products by name' className='w-[85%] px-2 rounded-l-sm' />
+                    <input type="text" name="search" id="search" placeholder='search products by name' className='w-[85%] px-2 rounded-l-sm outline-none border-none text-base font-normal' />
                     <button className='w-[15%] bg-[#fafafa] rounded-r-sm text-xl hover:text-[#2742fd]'><i className="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 

@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <div >
 
-            <nav className='flex w-full items-center justify-between py-2 px-[5%] bg-[#fafafa]'>
+            <nav className='flex w-full items-center justify-between py-2 px-[5%] bg-[#fafafa] '>
                 <div className='flex items-center '>
                     <img src={Logo} alt="" className='w-[70px] h-[60px] bg-inherit' />
                     <h1 className='text-2xl font-medium text-black'>electro</h1>
@@ -33,7 +33,7 @@ function Navbar() {
                 </div>
             </nav>
 
-            <div className='w-full bg-[#2742fd] px-[5%] flex items-center justify-between top-0 sticky'>
+            <div className='w-full bg-[#2742fd] px-[5%] flex items-center justify-between '>
 
                 <div className='flex items-center gap-2 text-[#ffffff] py-6 '>
                     <i className="fa-solid fa-square-caret-down"></i>

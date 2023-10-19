@@ -1,7 +1,12 @@
 import React from 'react'
 import Watch from '../assets/Watch.webp'
+import ShopCard from '../Cards/ShopCard'
 
 function Shop() {
+
+
+  
+
   return (
     <>
       <br />
@@ -18,49 +23,44 @@ function Shop() {
 
           {/* --brands-column-- */}
           <div className='border-[1px] border-[#ededed] w-[25%]  rounded-md'>
-            
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>All Categories brand</button>
+              <button>All Brands (24)</button>
             </div>
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Apple (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Samsung (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Sony (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Google (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Intel (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>LG (4)</button>
             </div>
-           
+
             <div className='py-3 px-6 hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              <button>Apple (20)</button>
+              <button>Hitachi (0)</button>
             </div>
-           
+
 
           </div>
           <div className='border-2 w-[75%] h-20'>
 
 
-          <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
-              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
-                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
-                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
-              </div>
-            </div>
+           
 
           </div>
         </div>
@@ -68,7 +68,8 @@ function Shop() {
       </section>
 
 
-
+     <ShopCard/>
+  
 
     </>
   )

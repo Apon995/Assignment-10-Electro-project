@@ -16,7 +16,6 @@ body {
 #navUl > li > .active {
   color: #2742fd;
   border-bottom: 2px solid #2742fd;
-  
 }
 
 #navUl > li {
@@ -26,27 +25,31 @@ body {
   font-size: 1rem;
 }
 
-
 .footerLinks > li > a:hover {
-  color:#2742fd;
+  color: #2742fd;
   border-bottom: 2px solid #2742fd;
-
 }
 
 #socialicons > div {
   background-color: #fafafa;
-  padding:5px 8px;
+  padding: 5px 8px;
   font-size: 22px;
   border-radius: 2px;
-  transition: all  0.8s;
- 
-
+  transition: all 0.8s;
 }
 
-#socialicons > div:hover{
+#socialicons > div:hover {
   cursor: pointer;
-  background-color:#2742fd;
+  background-color: #2742fd;
   color: #ffffff;
+}
 
+.bestSale-box:hover > div > img {
+  transform: scale(1.08);
+  transition: all 0.9s;
+}
 
+.bestSale-box:hover > div > p {
+  color:#2742fd;
+  transition: all 0.4s;
 }

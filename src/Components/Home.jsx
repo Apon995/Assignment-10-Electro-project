@@ -1,5 +1,6 @@
 import React from 'react';
 import banner from '../assets/banner.webp'
+import Watch from '../assets/Watch.webp'
 
 function Home() {
   return (
@@ -61,7 +62,7 @@ function Home() {
 
             <div>
               <h1 className='text-[#252525] text-xl font-medium'>100% Money Back</h1>
-              <p  className='text-sm text-[#636363] font-normal'> You have 30 days to Return</p>
+              <p className='text-sm text-[#636363] font-normal'> You have 30 days to Return</p>
             </div>
 
           </div>
@@ -79,11 +80,81 @@ function Home() {
             </div>
 
           </div>
-         
+
 
 
 
         </div>
+
+        <br />
+        <br />
+        <br />
+
+        {/* ---top--sell-products-sction-- */}
+
+        <div className='px-[5%] w-full'>
+
+          <div className='bg-[#2742fd]  w-[20%] rounded-t-md'>
+
+            <div className='text-white font-medium text-xl flex items-center justify-center py-3 gap-2'>
+
+              <i className="fa-solid fa-fire"></i>
+              <h1 > Top Sell products</h1>
+            </div>
+
+
+          </div>
+          <div className='flex items-center gap-2'>
+            {/* --card-- */}
+            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
+              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
+                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
+              </div>
+            </div>
+
+
+            {/* --card-- */}
+            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
+              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
+                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
+              </div>
+            </div>
+
+
+            {/* --card-- */}
+            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
+              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
+                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
+              </div>
+            </div>
+
+
+            {/* --card-- */}
+            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
+              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
+                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
+              </div>
+            </div>
+
+
+            {/* --card-- */}
+            <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[250px] py-2 px-2 h-[200px] hover:cursor-pointer'>
+              <div className='bg-[#fafafa] py-2 rounded-md space-y-3'>
+                <img src={Watch} alt="watch" className='w-[110px] mx-auto' />
+                <p className='text-center text-[#252525] font-medium'>Smart watch</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br />
+        <br />
 
       </section>
 

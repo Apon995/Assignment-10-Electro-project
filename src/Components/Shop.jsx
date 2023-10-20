@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import ShopCard from '../Cards/ShopCard'
+import ShopCard from '../Cards/ShopCard';
+import Swal from 'sweetalert2';
+import searchingDuck from '../assets/searching.gif';
+import { useNavigate } from 'react-router-dom'
+
 
 
 function Shop() {
+  const Navigate = useNavigate();
 
   const [ProductData, setProductData] = useState([]);
   const [AlldataLength, setAlldataLength] = useState(null);
-  const [Apple, setApple] = useState(null)
-  const [Samsung, setSamsung] = useState(null)
-  const [Sony, setSony] = useState(null)
-  const [Goggle, setGoggle] = useState(null)
-  const [Intel, setIntel] = useState(null)
-  const [Lg, setLg] = useState(null)
-  const [Hitachi , setHitachi] = useState(null)
+
   const [showAll, setShowAll] = useState(9)
 
 
@@ -21,11 +20,12 @@ function Shop() {
     fetch('http://localhost:5000/Products')
       .then(res => res.json())
       .then(data => {
-        setAlldataLength(data.length)
         setProductData(data)
+        setAlldataLength(data.length)
       })
 
   }, [])
+
 
 
   const HandleToloadAllBrands = () => {
@@ -40,7 +40,10 @@ function Shop() {
 
     fetch('http://localhost:5000/products')
       .then(res => res.json())
-      .then(data => setProductData(data))
+      .then(data => {
+        setProductData(data)
+        setAlldataLength(data.length)
+      })
 
 
 
@@ -61,7 +64,7 @@ function Shop() {
       .then(res => res.json())
       .then(data => {
         setProductData(data)
-        setApple(data?.length)
+
       })
 
 
@@ -81,7 +84,7 @@ function Shop() {
       .then(res => res.json())
       .then(data => {
         setProductData(data)
-        setSamsung(data?.length)
+
       })
 
 
@@ -102,7 +105,7 @@ function Shop() {
       .then(res => res.json())
       .then(data => {
         setProductData(data)
-        setSony(data?.length)
+
       })
 
 
@@ -126,7 +129,7 @@ function Shop() {
       .then(res => res.json())
       .then(data => {
         setProductData(data)
-        setGoggle(data?.length)
+
       })
 
 
@@ -148,9 +151,9 @@ function Shop() {
 
     fetch('http://localhost:5000/Intel')
       .then(res => res.json())
-      .then(data =>{
+      .then(data => {
         setProductData(data)
-        setIntel(data?.length)
+
       })
 
 
@@ -172,7 +175,7 @@ function Shop() {
       .then(res => res.json())
       .then(data => {
         setProductData(data)
-        setLg(data?.length)
+
       })
 
 
@@ -190,10 +193,69 @@ function Shop() {
     document.getElementById('hitachi').classList.add('shopActive')
 
 
-    setHitachi(0)
+
     setProductData(null)
 
   }
+
+
+  const HandleDeleteProduct = (id) => {
+
+    Swal.fire({
+      title: 'Are you sure Delete it?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        fetch(`http://localhost:5000/Products/${id}`, {
+          method: 'DELETE',
+
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.deletedCount == 1) {
+              console.log(data)
+
+              const restData = ProductData?.filter((product => product._id !== id))
+              setProductData(restData);
+              setAlldataLength(ProductData.length)
+            }
+          })
+
+
+      }
+    })
+
+
+  }
+
+  const HandleUpdateProduct = (id) => {
+
+    Swal.fire({
+      title: 'Can you update this Product ?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        Navigate(`/update/${id}`)
+
+
+
+
+
+      }
+    })
+
+  }
+
 
 
 
@@ -220,53 +282,75 @@ function Shop() {
             </button>
             <br />
             <button onClick={HandleToloadApple} id='apple' className='py-3 inline-flex gap-1 w-full px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Apple { Apple == null ? '' : <p>({Apple})</p>}
+              Apple
             </button>
             <br />
             <button onClick={HandleToloadSamsung} id='samsung' className='py-3 inline-flex gap-1 w-full px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Samsung { Samsung == null ? '' : <p>({Samsung})</p>}
+              Samsung
             </button>
             <br />
 
             <button onClick={HandleToloadSony} id='sony' className='py-3 inline-flex gap-1 w-full px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Sony  { Sony == null ? '' : <p>({Sony})</p>}
+              Sony
             </button>
 
             <button onClick={HandleToloadGoogle} id='goggle' className='py-3 inline-flex gap-1 w-full px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Goggle { Goggle == null ? '' : <p>({Goggle})</p>}
+              Goggle
             </button>
             <br />
             <button onClick={HandleToloadIntel} id='intel' className='py-3 w-full inline-flex gap-1 px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Intel { Intel == null ? '' : <p>({Intel})</p>}
+              Intel
             </button>
             <br />
             <button onClick={HandleToloadLG} id='lg' className='py-3 w-full inline-flex gap-1 px-4 text-start border-b-[2px] border-[#ededed] hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              LG { Lg == null ? '' : <p>({Lg})</p>}
+              LG
             </button>
             <br />
             <button onClick={HandleToloadHitachi} id='hitachi' className='py-3 inline-flex gap-1 w-full px-4 text-start hover:cursor-pointer text-[#636363] text-base duration-700 rounded-sm font-normal hover:bg-[#2742fd] hover:text-white '>
-              Hitachi { Hitachi == null ? '' : <p>({Hitachi})</p>}
+              Hitachi
             </button>
 
 
           </div>
-          <div className='w-[75%] grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-4 '>
+
+          <div className='w-[75%]'>
 
             {
-              ProductData?.slice(0, showAll).map((product) => <ShopCard key={product._id} product={product} />)
+
+              ProductData?.length == 0 || ProductData == null ? <div className='flex w-full items-center justify-center flex-col gap-3'>
+
+                <img src={searchingDuck} alt="searching duck" />
+                <h2 className='text-[#252525] text-2xl '>
+                  This brand no Data found !
+                </h2>
+
+
+              </div> : <>
+                <div className=' grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-4 '>
+
+                  {
+                    ProductData?.slice(0, showAll).map((product) => <ShopCard key={product._id} product={product} HandleDeleteProduct={HandleDeleteProduct} HandleUpdateProduct={HandleUpdateProduct} />)
+                  }
+                </div>
+
+                <br />
+                <br />
+                {ProductData?.length < 9 ? "" : <div className={`w-full text-center ${showAll == ProductData?.length || ProductData == null ? "hidden" : 'block'} `}>
+                  <button onClick={() => setShowAll(ProductData.length)} className='bg-[#2742fd] px-3 py-2 font-normal rounded-md text-white'>Show all</button>
+                </div>
+                }
+                <br />
+
+
+
+
+
+              </>
             }
+
           </div>
+
         </div>
-        <br />
-        <br />
-        {
-
-
-          ProductData?.length < 9 ? "" : <div className={`w-full text-center ${showAll == ProductData?.length || ProductData == null ? "hidden" : 'block'} `}>
-            <button onClick={() => setShowAll(ProductData.length)} className='bg-[#2742fd] px-3 py-2 font-normal rounded-md text-white'>Show all</button>
-          </div>
-        }
-        <br />
 
 
 

@@ -1,11 +1,13 @@
 import React from 'react'
-import Watch from '../assets/Watch.webp'
-
-function ShopCard({ product }) {
-
-    const { product_Image, brand_Name, product_type, price } = product || {};
 
 
+function ShopCard({ product , HandleDeleteProduct , HandleUpdateProduct  }) {
+
+    const { _id,product_Image, brand_Name, product_Name, price } = product || {};
+
+ 
+
+   
 
     return (
         <>
@@ -17,7 +19,7 @@ function ShopCard({ product }) {
                 </div>
 
                 <div className='px-1 space-y-1 text-[#252525]'>
-                    <h1 className='text-xl text-[#252525] font-semibold'>{product_type || 'watch'}</h1>
+                    <h1 className='text-xl text-[#252525] font-semibold'>{product_Name || 'watch'}</h1>
                     <div >
                         <i className="fa-solid fa-star text-[#ffe234] "></i>
                         <i className="fa-solid fa-star text-[#ffe234] "></i>
@@ -33,9 +35,11 @@ function ShopCard({ product }) {
 
 
 
-                    <div className='flex gap-3 pt-3'>
+                    <div className='flex gap-2  pt-3'>
                         <button className="text-base font-normal bg-[#ededed] px-4 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"> Add to cart <i className="fa-solid fa-cart-shopping text-base"></i></button>
-                        <button className="text-base font-normal bg-[#ededed] px-4 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-regular fa-heart"></i></button>
+                        <button className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-regular fa-heart"></i></button>
+                        <button onClick={()=> HandleUpdateProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-pen"></i></button>
+                        <button onClick={()=> HandleDeleteProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>

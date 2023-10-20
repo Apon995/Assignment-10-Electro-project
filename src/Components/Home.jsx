@@ -158,12 +158,12 @@ function Home() {
         <br />
         <br />
 
-        <div className='px-[5%] flex flex-row gap-4'>
+        <div className='px-[5%] grid grid-cols-2 gap-4'>
 
 
           {
 
-            Product?.slice(5, 7).map((data) => <Card key={data?._id} data={data} />)
+            Product?.slice(1, 7).map((data) => <Card key={data?._id} data={data} />)
 
           }
         </div>
@@ -186,7 +186,7 @@ function Home() {
           <div className=' grid grid-cols-3 gap-5'>
 
             {
-              Product?.slice(15, 21).map((data) => <NewProductCard key={data._id} data={data} />)
+              Product?.slice(1,3).map((data) => <NewProductCard key={data._id} data={data} />)
             }
 
 

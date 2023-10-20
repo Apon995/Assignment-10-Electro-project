@@ -3,7 +3,7 @@ import React from 'react';
 
 
 function NewProductCard({data}) {
-    const {product_Image, product_type , short_description} = data || {}
+    const {product_Image, product_Name , short_description} = data || {}
     return (
         <>
 
@@ -11,7 +11,7 @@ function NewProductCard({data}) {
                 <div className=' rounded-md  flex gap-2 flex-row-reverse items-center py-9 px-3'>
                     <img src={product_Image} alt="watch" className='w-[140px] h-[120px] ' />
                     <div className='space-y-2'>
-                        <h1 className='text-[#252525] text-3xl font-medium'>{product_type || "computer"} </h1>
+                        <h1 className='text-[#252525] text-3xl font-medium'>{product_Name || "computer"} </h1>
                         <p className='text-base text-[#636363] font-normal  '>{short_description ||''}<br />
                         </p>
                         <div className='flex gap-3 pt-3'>

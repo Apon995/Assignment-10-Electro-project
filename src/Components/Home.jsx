@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import banner from '../assets/banner.webp'
 import TopSellCard from '../Cards/TopSellCard';
-import Watch from '../assets/watch.webp'
+import Putin from '../assets/customer-4.jpg'
+import kin from '../assets/customer-1.jpg'
+import mark from '../assets/customer-2.jpg'
+import musk from '../assets/customer-3.webp'
+
+
+
+import Card from '../Cards/Card';
+import NewProductCard from '../Cards/NewProductCard';
 
 
 
@@ -50,60 +58,75 @@ function Home() {
         <br />
         <br />
         {/* --policy-section-- */}
-        <div className='w-full h-[120px] border-t-[1px] border-[#ededed] border-b-[1px] flex items-center justify-around z-10 shadow-md'>
+        <marquee behavior="scroll" direction='left' className='z-10 shadow-md bg-[#ffffff]  border-t-[1px] border-[#ededed] border-b-[1px]' >
+          <div  className='w-full h-[120px] flex items-center justify-around '>
 
-          {/* --row-1-- */}
-          <div className='flex items-center gap-3 hover:cursor-pointer'>
-            <i className="fa-solid fa-truck text-[2rem] text-[#2742fd]"></i>
+            {/* <marquee behavior="" direction=""></marquee> */}
+            {/* --row-1-- */}
+            <div className='flex items-center gap-3 hover:cursor-pointer'>
+              <i className="fa-solid fa-truck text-[2rem] text-[#2742fd]"></i>
 
-            <div>
-              <h1 className='text-[#252525] text-xl font-medium'> Free devlivery</h1>
-              <p className='text-sm text-[#636363] font-normal'>   Free devlivery on all US order</p>
+              <div>
+                <h1 className='text-[#252525] text-xl font-medium'> Free devlivery</h1>
+                <p className='text-sm text-[#636363] font-normal'>   Free devlivery on all US order</p>
+
+              </div>
+
+
+            </div>
+
+            {/* --row-2-- */}
+            <div className='flex items-center gap-3 hover:cursor-pointer'>
+              <i className="fa-solid fa-headphones text-[2rem] text-[#2742fd]"></i>
+              <div>
+                <h1 className='text-[#252525] text-xl font-medium'>Support 24/7</h1>
+                <p className='text-sm text-[#636363] font-normal'>Contact us 24 hours a day</p>
+              </div>
+
+            </div>
+
+            {/* ---row-3-- */}
+            <div className='flex items-center gap-3 hover:cursor-pointer'>
+              <i className="fa-solid fa-money-check-dollar text-[2rem] text-[#2742fd]"></i>
+
+              <div>
+                <h1 className='text-[#252525] text-xl font-medium'>100% Money Back</h1>
+                <p className='text-sm text-[#636363] font-normal'> You have 30 days to Return</p>
+              </div>
 
             </div>
 
 
-          </div>
 
-          {/* --row-2-- */}
-          <div className='flex items-center gap-3 hover:cursor-pointer'>
-            <i className="fa-solid fa-headphones text-[2rem] text-[#2742fd]"></i>
-            <div>
-              <h1 className='text-[#252525] text-xl font-medium'>Support 24/7</h1>
-              <p className='text-sm text-[#636363] font-normal'>Contact us 24 hours a day</p>
-            </div>
+            {/* --row-4-- */}
+            <div className='flex items-center gap-3 hover:cursor-pointer'>
+              <i className="fa-solid fa-rotate-left text-[2rem] text-[#2742fd]"></i>
 
-          </div>
+              <div>
+                <h1 className='text-[#252525] text-xl font-medium'>30 Days Return</h1>
+                <p className='text-sm text-[#636363] font-normal'>If Products have major problem</p>
 
-          {/* ---row-3-- */}
-          <div className='flex items-center gap-3 hover:cursor-pointer'>
-            <i className="fa-solid fa-money-check-dollar text-[2rem] text-[#2742fd]"></i>
-
-            <div>
-              <h1 className='text-[#252525] text-xl font-medium'>100% Money Back</h1>
-              <p className='text-sm text-[#636363] font-normal'> You have 30 days to Return</p>
-            </div>
-
-          </div>
-
-
-
-          {/* --row-4-- */}
-          <div className='flex items-center gap-3 hover:cursor-pointer'>
-            <i className="fa-solid fa-rotate-left text-[2rem] text-[#2742fd]"></i>
-
-            <div>
-              <h1 className='text-[#252525] text-xl font-medium'>30 Days Return</h1>
-              <p className='text-sm text-[#636363] font-normal'>If Products have major problem</p>
+              </div>
 
             </div>
 
+            {/* ---row--5 */}
+            <div className='flex items-center gap-3 hover:cursor-pointer'>
+              <i className="fa-solid fa-money-bill text-[2rem] text-[#2742fd]"></i>
+
+              <div>
+                <h1 className='text-[#252525] text-xl font-medium'>Payment Secure</h1>
+                <p className='text-sm text-[#636363] font-normal'>We ensure secure payment</p>
+
+              </div>
+
+            </div>
+
+
+
+
           </div>
-
-
-
-
-        </div>
+        </marquee>
 
         <br />
         <br />
@@ -135,21 +158,114 @@ function Home() {
         <br />
         <br />
 
-        <div>
+        <div className='px-[5%] flex flex-row gap-4'>
 
-          <div className='border-[1px] bestSale-box border-[#ededed] rounded-md w-[700px] hover:cursor-pointer'>
-            <div className='bg-[#fafafa] rounded-md  flex flex-row-reverse items-center py-5'>
-              <img src={Watch} alt="watch" className='w-[140px] mx-auto' />
-              <div>
-                <h1>Protective Sleeves </h1>
-                  <p>It is a long established fact <br />
-                  that a reader will be distracted</p>
 
-                  <button className='bg-[#2742fd] px-4 py-3 rounded-md text-white hover:text-[#252525] duration-500  hover:border-[1px] hover:bg-inherit hover:text-normal  font-medium'>Shop now</button>
-              </div>
+          {
+
+            Product?.slice(5, 7).map((data) => <Card key={data?._id} data={data} />)
+
+          }
+        </div>
+        <br />
+        <br />
+
+        {/* ---New--products-- */}
+        <div className='px-[5%] w-full'>
+
+          <div className='bg-[#2742fd]  w-[32%] rounded-t-md'>
+
+            <div className='text-white font-medium text-xl flex items-center justify-center py-3 gap-2'>
+
+
+              <h1 > New products</h1>
             </div>
+
+
+          </div>
+          <div className=' grid grid-cols-3 gap-5'>
+
+            {
+              Product?.slice(15, 21).map((data) => <NewProductCard key={data._id} data={data} />)
+            }
+
+
           </div>
 
+        </div>
+
+        <br />
+        <br />
+        <br />
+        {/* ----our--customers-review--- */}
+        <div>
+          <h1 className='text-base font-medium text-red-500 text-center'>Our customers</h1>
+          <div className='text-center space-y-2'>
+            <h2 className='text-4xl font-semibold text-[#252525]'>Our Customer Reviews</h2>
+            <p className='text-base font-normal text-[#636363]'>Our every customer feedback is good , products quality and service awsome!</p>
+
+
+          </div>
+
+          <br />
+          <br />
+
+          <div className='grid  lg:grid-cols-2 md:grid-cols-1 grid-cols-1 lg:gap-0 md:gap-5  px-[5%] '>
+            {/* ---client-one-- */}
+            <div className='flex md:flex-row flex-col border-[1px] cursor-pointer hover:shadow-lg hover:bg-white rounded-md '>
+              <div className='w-full my-auto'>
+                <img src={kin} alt=".." className='md:w-full w-fit mx-auto h-[150px] my-auto' />
+              </div>
+              <div className='py-2 px-2 space-y-3'>
+                <h1 className='text-base font-normal text-[#636363]'>
+                  "I've been a loyal customer of Electro.com for years, and they never disappoint. The range of electrical and tech products they offer is impressive. Not only do they have the latest gadgets, but their customer service is top-notch. Quick delivery, competitive prices, and a user-friendly website make them my go-to for all things electronic!"
+                </h1>
+                <p className='text-sm font-semibold text-[#252525]'>kin jon un</p>
+              </div>
+
+            </div>
+            {/* ---client-two-- */}
+            <div className='flex md:flex-row flex-col border-[1px] cursor-pointer hover:shadow-lg hover:bg-white rounded-md py-1'>
+              <div className='w-full my-auto'>
+                <img src={musk} alt=".." className='md:w-full w-fit mx-auto h-[150px] my-auto' />
+              </div>
+              <div className='py-2 px-2 space-y-3'>
+                <h1 className='text-base font-normal text-[#636363]'>
+                  "Electro.com has a fantastic selection of products. I recently purchased a new smartphone and some electrical tools, and I couldn't be happier. The quality is always excellent, and their prices are very competitive. Plus, they provide detailed product descriptions, which is helpful when making a decision. Highly recommended!"
+                </h1>
+                <p className='text-sm font-semibold text-[#252525]'>Elon musk</p>
+              </div>
+
+            </div>
+            {/* ---client-three-- */}
+            <div className='flex md:flex-row flex-col border-[1px] cursor-pointer hover:shadow-lg hover:bg-white rounded-md py-1'>
+              <div className='w-full my-auto'>
+                <img src={mark} alt=".." className='md:w-full w-fit mx-auto h-[150px] my-auto' />
+              </div>
+              <div className='py-2 px-2 space-y-3'>
+                <h1 className='text-base font-normal text-[#636363]'>
+                  "I had some questions about a complex electrical component I needed for a DIY project, and the customer support at Electro.com was amazing. They were patient, knowledgeable, and helped me choose the right product. It's rare to find such great customer service these days. Kudos to the team!"
+                </h1>
+                <p className='text-sm font-semibold text-[#252525]'>Mark Zuckerbug </p>
+              </div>
+
+            </div>
+            {/* ---client-four-- */}
+            <div className='flex md:flex-row flex-col border-[1px] cursor-pointer hover:shadow-lg hover:bg-white rounded-md py-1'>
+              <div className='w-full my-auto'>
+                <img src={Putin} alt=".." className='md:w-full w-fit mx-auto h-[150px] my-auto' />
+              </div>
+              <div className='py-2 px-2 space-y-3'>
+                <h1 className='text-base font-normal text-[#636363]'>
+                  "I've compared prices on various sites, and Electro.com consistently offers some of the best deals on electrical and tech products. Their discounts and promotions are fantastic. Plus, they frequently update their inventory, so you can always find the latest technology at reasonable prices."
+                </h1>
+                <p className='text-sm font-semibold text-[#252525]'>Vladimir Putin</p>
+              </div>
+
+            </div>
+
+
+          </div>
         </div>
 
       </section>
@@ -157,7 +273,7 @@ function Home() {
 
 
 
-
+      <br />
       <br />
       {/* --subscribe-newsletter */}
       <div className='w-full h-[200px] bg-[#2742fd] text-white px-[5%] flex items-center justify-between'>
@@ -169,12 +285,16 @@ function Home() {
           </h1>
         </div>
 
-        <div className='flex border-[1px] h-[55px] w-[35rem] rounded-md'>
+        <div className='flex border-[1px] h-[65px] w-[35rem] rounded-md'>
           <input type="text" name="search" id="search" placeholder='Enter your email address' className='w-[80%] px-2 rounded-l-sm outline-none border-none text-base font-normal' />
           <button className='w-[20%] bg-[#fafafa] rounded-r-sm text-base text-[#636363] hover:bg-inherit  font-medium duration-700 hover:text-white'>Submit</button>
         </div>
 
       </div>
+
+
+
+
     </>
   )
 }

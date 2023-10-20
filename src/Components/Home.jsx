@@ -58,10 +58,10 @@ function Home() {
         <br />
         <br />
         {/* --policy-section-- */}
-        <marquee behavior="scroll" direction='left' className='z-10 shadow-md bg-[#ffffff]  border-t-[1px] border-[#ededed] border-b-[1px]' >
+        <marquee  behavior="scroll" direction='left'  className='z-10 shadow-md bg-[#ffffff]  border-t-[1px] border-[#ededed] border-b-[1px]' >
           <div  className='w-full h-[120px] flex items-center justify-around '>
 
-            {/* <marquee behavior="" direction=""></marquee> */}
+           
             {/* --row-1-- */}
             <div className='flex items-center gap-3 hover:cursor-pointer'>
               <i className="fa-solid fa-truck text-[2rem] text-[#2742fd]"></i>
@@ -178,7 +178,7 @@ function Home() {
             <div className='text-white font-medium text-xl flex items-center justify-center py-3 gap-2'>
 
 
-              <h1 > New products</h1>
+              <h1 >New products</h1>
             </div>
 
 

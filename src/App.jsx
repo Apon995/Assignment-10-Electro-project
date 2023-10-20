@@ -16,6 +16,8 @@ function App() {
       <header>
         <Navbar />
       </header>
+      <br />
+      <br />
       <main >
         {
           navigation?.state == 'idle' ? < Outlet /> : <div className='flex items-center justify-center w-full h-[60vh]'>

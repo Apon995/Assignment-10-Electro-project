@@ -1,13 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 
-function ShopCard({ product , HandleDeleteProduct , HandleUpdateProduct  }) {
+function ShopCard({ product, HandleDeleteProduct, HandleUpdateProduct, HandleAddtoCart }) {
 
-    const { _id,product_Image, brand_Name, product_Name, price } = product || {};
+    const { _id, product_Image, brand_Name, product_Name, price } = product || {};
 
- 
 
-   
+
+
 
     return (
         <>
@@ -30,16 +31,16 @@ function ShopCard({ product , HandleDeleteProduct , HandleUpdateProduct  }) {
 
                     </div>
 
-                    <p className='text-[#252525] text-base font-normal'>Brand : {brand_Name ||'apple'}</p>
+                    <p className='text-[#252525] text-base font-normal'>Brand : {brand_Name || 'apple'}</p>
                     <p className='text-[#252525] text-base font-normal'>Price : ${price || '000'}</p>
 
 
 
                     <div className='flex gap-2  pt-3'>
-                        <button className="text-base font-normal bg-[#ededed] px-4 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"> Add to cart <i className="fa-solid fa-cart-shopping text-base"></i></button>
+                        <button onClick={() => HandleAddtoCart(_id)} className="text-base font-normal bg-[#ededed] px-4 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"> Add to cart <i className="fa-solid fa-cart-shopping text-base"></i></button>
                         <button className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-regular fa-heart"></i></button>
-                        <button onClick={()=> HandleUpdateProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-pen"></i></button>
-                        <button onClick={()=> HandleDeleteProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-trash-can"></i></button>
+                        <button onClick={() => HandleUpdateProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-pen"></i></button>
+                        <button onClick={() => HandleDeleteProduct(_id)} className="text-base font-normal bg-[#ededed] px-2 rounded-md py-2 hover:bg-[#2742fd] hover:text-white duration-300"><i className="fa-solid fa-trash-can"></i></button>
                     </div>
                 </div>
             </div>
@@ -51,4 +52,13 @@ function ShopCard({ product , HandleDeleteProduct , HandleUpdateProduct  }) {
     )
 }
 
+ShopCard.propTypes = {
+
+    product: PropTypes.object.isRequired,
+    HandleDeleteProduct: PropTypes.func,
+    HandleUpdateProduct: PropTypes.func,
+    HandleAddtoCart: PropTypes.func
+
+
+}
 export default ShopCard

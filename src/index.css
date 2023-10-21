@@ -61,3 +61,20 @@ body {
   
 
 }
+
+.BtnLogin:hover > i{
+  color:#ffffff;
+}
+
+
+@media screen and (max-width : 640px){
+  
+  #navUl > li > a {
+    color:#ffffff ;
+  }
+
+  #navUl > li > .active {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+}

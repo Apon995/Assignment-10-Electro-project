@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from './Components/Footer.jsx'
-import { Outlet, useNavigation } from 'react-router-dom'
+import { Outlet, useLocation, useNavigation } from 'react-router-dom'
 import Navbar from './Components/Navbar';
 import './index.css'
 import { Oval } from 'react-loader-spinner';
 
 function App() {
+  const location = useLocation();
+  const [currentLocation, setCurrentLocation] = useState()
+
+  useEffect(()=>{
+    setCurrentLocation(location.pathname.replace('/', ''))
+  },[location.pathname])
 
   const navigation = useNavigation()
 
-  console.log(navigation?.state)
+
   return (
     <>
 
       <header>
-        <Navbar />
+        <Navbar  currentLocation={currentLocation}/>
       </header>
       <br />
       <br />
@@ -40,7 +46,7 @@ function App() {
         }
 
       </main>
-      <footer>
+      <footer >
         <Footer />
       </footer>
 

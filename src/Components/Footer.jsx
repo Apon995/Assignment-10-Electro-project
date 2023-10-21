@@ -6,17 +6,17 @@ function Footer() {
   return (
     <>
     <hr />
-      <div className='w-full px-[5%] bg-[#ffffff] text-[#636363] py-9 footer md:text-start text-center ' >
+      <div className='w-full lg:px-[5%] md:px-[3%] px-[3%] bg-[#ffffff] text-[#636363] py-9 footer md:text-start text-center ' >
         <div className=' flex md:flex-row flex-col items-center justify-between py-9'>
           {/* --footer-1st-col-- */}
           <div >
-            <div className='flex items-center '>
-              <img src={Logo} alt="" className='w-[70px] h-[60px] bg-inherit' />
+            <div className='flex items-center md:justify-start justify-center '>
+              <img src={Logo} alt="" className='md:w-[70px] w-[40px] md:h-[60px]' />
               <h1 className=' font-medium text-3xl text-black'>Electro</h1>
 
             </div>
             <div>
-              <p className='text-sm font-medium'>Our company is the best Electronices <br />
+              <p className='font-normal  text-sm'>Our company is the best Electronices <br />
                 products seller,very famous shop in the city,<br />
                 we try to our best for customers.</p>
             </div>
@@ -40,12 +40,12 @@ function Footer() {
           <div className='md:block hidden'>
             <h1 className='pb-4 font-medium text-2xl text-black'>Quick Links</h1>
             <div>
-              <ul className=' text-base font-normal space-y-1 footerLinks '>
+              <ul className=' text-sm font-normal space-y-1 footerLinks '>
                 <li><Link to='/' >Home</Link></li>
                 <li><Link to='/About' >About us</Link></li>
                 <li><Link to='/Contact' >Contact us</Link></li>
                 <li><Link to='/Shop' >Shop</Link></li>
-                <li><Link to='/Addproducts' >Addproducts</Link></li>
+                
               </ul>
             </div>
           </div>
@@ -54,7 +54,7 @@ function Footer() {
           <div className='lg:block hidden'>
             <h1 className='pb-4 font-medium text-2xl text-black'>Our Top products</h1>
 
-            <ul className='text-base font-normal space-y-1 footerLinks ' >
+            <ul className='text-sm font-normal space-y-1 footerLinks ' >
               <li><Link to='/'>Computers</Link></li>
               <li><Link to='/'>Phones</Link> </li>
               <li><Link to='/'>Mobile accosories</Link></li>
@@ -69,7 +69,7 @@ function Footer() {
             <h1 className='pb-4 font-medium text-2xl text-black'>Contact info </h1>
 
             <div>
-              <ul className='text-base font-normal space-y-1'>
+              <ul className=' font-normal space-y-1 text-sm'>
                 <li>celenden park , Mirpur city 2005</li>
                 <li>Allah karim square in Bangladesh.</li>
                 <li>Hotline : +9990003</li>
@@ -81,7 +81,7 @@ function Footer() {
         </div>
 
         <hr />
-        <div className='pt-4'>
+        <div className='pt-4  text-sm'>
           <p>Copyright &copy; Electro Electronices and technology company. All rights reserved</p>
 
         </div>

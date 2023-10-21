@@ -1,3 +1,4 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -5,11 +6,15 @@ import AddProduct from './Components/AddProduct.jsx'
 import NotFound from './Components/NotFound.jsx'
 import Mycart from './Components/Mycart.jsx';
 import Home from './Components/Home.jsx';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Shop from './Components/Shop.jsx';
 import Contact from './Components/Contact.jsx';
 import About from './Components/About.jsx';
 import Update from './Components/Update.jsx';
+import Provider from './ContextHooks/Provider.jsx';
+import Login from './Components/Login.jsx';
+import Register from './Components/Register.jsx';
+import PrivateRoute from './Components/PrivateRoute.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -21,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        
+
       },
       {
         path: '/Shop',
@@ -29,24 +34,33 @@ const router = createBrowserRouter([
       },
       {
         path: '/Addproducts',
-        element: <AddProduct />
+        element: <PrivateRoute><AddProduct /></PrivateRoute>
       },
       {
         path: '/Mycart',
-        element: <Mycart />
+        element: <Mycart />,
+
       },
       {
         path: '/Contact',
-        element: <Contact/>
+        element: <Contact />
       },
       {
         path: '/About',
-        element: <About/>
+        element: <About />
       },
       {
-        path : '/update/:id',
-        element : <Update/>,
-        loader : ({params})=> fetch(`http://localhost:5000/Products/${params.id}`)
+        path: '/update/:id',
+        element: <Update />,
+        loader: ({ params }) => fetch(`https://electro-server-side-dg5wi715k-shofikulsamz995-gmailcom.vercel.app/products/${params.id}`)
+      },
+      {
+        path: '/Login',
+        element: <Login />
+      },
+      {
+        path: '/Register',
+        element: <Register />
       }
     ]
 
@@ -58,6 +72,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
